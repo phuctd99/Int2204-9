@@ -1,6 +1,6 @@
-import java.util.Scanner;
 
-public class Studentmanagement {
+
+public class StudentManagement {
     public Student[] st = new Student[100];
 	
 	//Phuong thuc sameGroup
@@ -50,7 +50,7 @@ public class Studentmanagement {
     }
 
     public static void main( String[] args) {
-        Studentmanagement StuMan = new Studentmanagement();
+        StudentManagement StuMan = new StudentManagement();
         //Tao ra mot student
         Student st1 = new Student();
 
