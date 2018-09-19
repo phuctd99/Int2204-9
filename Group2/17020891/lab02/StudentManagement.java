@@ -17,7 +17,7 @@ public class StudentManagement {
                 group.add(students.get(i).getGroup());
             }
         }
-        for (int i = 0; i< group.size(); i++) {
+        for (int i = 0; i < group.size(); i++) {
             System.out.println("Lop " + group.get(i));
             for (int j = 0; j < students.size(); j++) {
                 if (students.get(j).getGroup().equals(group.get(i))) {
@@ -28,7 +28,7 @@ public class StudentManagement {
         System.out.println();
     }
      public void removeStudent(String id) {
-        for (int i=0; i<students.size(); i++ ) {
+        for (int i=0; i < students.size(); i++ ) {
             if (students.get(i).getId().equals(id)) {
                 students.remove(i);
             }
