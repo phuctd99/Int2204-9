@@ -20,7 +20,7 @@ public class StudentManagerment {
 		else return false;
 	}
 	
-	public StudentManagerment() {  // n is size of students array 
+	public StudentManagerment() {  
 		System.out.print("nhap so phan tu: ");
 		sizeArray = input.nextInt();
 		input.nextLine();
@@ -96,8 +96,8 @@ public class StudentManagerment {
 		System.out.println(s3.getInfo());
 		System.out.println(s4.getInfo());
 		System.out.println(s5.getInfo());
-		s3.setGroup("“INT22041");
-		s4.setGroup("“INT22041");		
+		s3.setGroup("â€œINT22041");
+		s4.setGroup("â€œINT22041");		
 		Student s6 = new Student("quynh", "1728282", "1728282@vnu.edu.vn");
 		s6.setGroup("INT22042");
 		StudentManagerment test = new StudentManagerment();
