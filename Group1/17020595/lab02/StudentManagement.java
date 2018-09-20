@@ -25,6 +25,7 @@ public class StudentManagement {
         System.out.println("Ket qua hs 1 va 2 cung lop nhau khong: " + sameGroup( student , s2 ));
         input(arr);
         StudentByGroup(); 
+        System.out.print("Nhap vao id ban muon xoa: ");
         String num = sc.nextLine();
         removeStudent(num);
     }    
