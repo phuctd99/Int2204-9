@@ -52,9 +52,9 @@ public class StudentManagement {
             System.out.println(list.get(i).getInfo());
         }
 
-        String group;
+       
         System.out.println("Nhập ID sinh viên muốn xóa ");
-        group=scan.nextLine();
+        id =scan.nextLine();
         removeStudent(id);
 
         for (int i = 0; i < list.size(); i++)// in thông tin của list vừa xóa
