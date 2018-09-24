@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Fibonaxi{
 
-    static int fibo(int n)
+     int fibo(int n)
     {
         int sum = 0;
         if(n==0)
@@ -23,7 +23,7 @@ public class Fibonaxi{
             return sumc;
     }
 /*  
-  static int fibo(int n)
+   int fibo(int n)
     {
 
         if(n==0)
@@ -40,8 +40,8 @@ public class Fibonaxi{
     public static void main(String args[])
     {
         Scanner scanner = new Scanner(System.in);
-
+        Fibonaxi fi = new Fibonaxi();
         int x = scanner.nextInt();
-        System.out.println(fibo(x));
+        System.out.println(fi.fibo(x));
     }
 }
