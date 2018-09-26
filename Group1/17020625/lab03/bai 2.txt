@@ -1,0 +1,119 @@
+package bai2;
+
+import java.util.Scanner;
+
+public class phanso {
+
+    private int numerator;
+    private int denominator;
+
+    public int getNumerator() {
+        return numerator;
+    }
+
+    public void setNumerator(int numerator) {
+        this.numerator = numerator;
+    }
+
+    public int getDenominator() {
+        return denominator;
+    }
+
+    public void setDenominator(int denominator) {
+        this.denominator = denominator;
+    }
+
+    public phanso() {
+
+        this.numerator = 1;
+        this.denominator = 1;
+
+    }
+
+    public phanso sumfraction(phanso s1) {
+
+        phanso s2 = new phanso();
+        s2.numerator = this.numerator * s1.denominator
+                + this.denominator * s1.numerator;
+        s2.denominator = this.denominator * s1.denominator;
+        return s2;
+    }
+
+    public phanso subtractionfraction(phanso s1) {
+        phanso s2 = new phanso();
+        s2.numerator = this.numerator * s1.denominator
+                - this.denominator * s1.numerator;
+        s2.denominator = this.denominator * s1.denominator;
+
+        return s2;
+    }
+
+    public phanso multiplicationfraction(phanso s1) {
+        phanso s2 = new phanso();
+        s2.numerator = this.numerator * s1.numerator;
+        s2.denominator = this.numerator * s1.denominator;
+
+        return s2;
+    }
+
+    public phanso divisionfraction(phanso s1) {
+        phanso s2 = new phanso();
+        s2.numerator = this.numerator * s1.denominator;
+        s2.denominator = this.denominator * s1.numerator;
+
+        return s2;
+    }
+
+    public void reducefraction() {
+        int ucln = USCLN(this.numerator, this.denominator);
+        this.numerator /= ucln;
+        this.denominator /= ucln;
+    }
+
+    public int USCLN(int a, int b) {
+        if (b == 0) {
+            return a;
+        }
+        return USCLN(b, a % b);
+    }
+
+    public void check() {
+
+        if (this.denominator == 0) {
+            System.out.println("Error");
+            this.denominator = 1;// tu dong cho bang 1;
+        }
+
+    }
+
+    public boolean equals(phanso s2) {
+        return this.numerator * s2.denominator - this.denominator * s2.numerator != 0;
+    }
+
+    public static void main(String[] args) {
+        Scanner inPut = new Scanner(System.in);
+        phanso s1 = new phanso();
+        int ts1 = inPut.nextInt();
+        s1.setNumerator(ts1);
+        int ms1 = inPut.nextInt();
+        s1.setDenominator(ms1);
+        phanso s2 = new phanso();
+        int ts2 = inPut.nextInt();
+        s2.setNumerator(ts2);
+        int ms2 = inPut.nextInt();
+        s2.setDenominator(ms2);
+
+        //tinh tong
+        s1.sumfraction(s2);
+        // tinh tru
+        s1.subtractionfraction(s2);
+        //tinh nhan
+        s1.multiplicationfraction(s2);
+        //tinh chia
+        s1.divisionfraction(s2);
+        //kiem tra bang nhau
+        s1.equals(s2);
+
+    }
+
+}
