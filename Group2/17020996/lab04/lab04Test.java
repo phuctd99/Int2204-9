@@ -60,27 +60,27 @@ public class lab04Test extends lab04{
 
     @Test
     public void testBMI1() {
-        String kq = bmi(1.65, 55);
+        String kq = bmi(1.65, 55); //20.202
         assertEquals( "Bình thường", kq);
     }
     @Test
     public void testBMI2() {
-        String kq = bmi(1.69, 123);
+        String kq = bmi(1.69, 123); //43.066
         assertEquals("Béo phì", kq);
     }
     @Test
     public void testBMI3() {
-        String kq = bmi(1.59, 69);
+        String kq = bmi(1.59, 69); //27.293
         assertEquals("Thừa cân", kq);
     }
     @Test
     public void testBMI4() {
-        String kq = bmi(1.59, 30);
+        String kq = bmi(1.59, 30); //11.866
         assertEquals("Thiếu cân", kq);
     }
     @Test
     public void testBMI5(){
-        String kq = bmi(1.63, 88);
-        assertEquals("Béo phì", kq);
+        String kq = bmi(1.6, 63.999744); //24.9999
+        assertEquals("Bình thường", kq);
     }
 }
