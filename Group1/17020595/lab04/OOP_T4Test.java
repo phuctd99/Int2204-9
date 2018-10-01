@@ -49,9 +49,9 @@ public class OOP_T4Test {
         System.out.println("returnMax");
         int a = 3;
         int b = 4;
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 4;
-        int result = instance.returnMax(a, b);
+        int result = OOP_T4.returnMax(a, b);
         assertEquals(4, result);        
     }
     @Test
@@ -59,9 +59,9 @@ public class OOP_T4Test {
         System.out.println("returnMax2");
         int a = -4;
         int b = 4;
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 4;
-        int result = instance.returnMax(a, b);
+        int result = OOP_T4.returnMax(a, b);
         assertEquals(4, result);
     } 
     @Test
@@ -69,9 +69,9 @@ public class OOP_T4Test {
         System.out.println("returnMax");
         int a = 0;
         int b = 0;
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 0;
-        int result = instance.returnMax(a, b);
+        int result = OOP_T4.returnMax(a, b);
         assertEquals(0, result);
     }
     @Test
@@ -79,9 +79,9 @@ public class OOP_T4Test {
         System.out.println("returnMax");
         int a = -1;
         int b = -4;
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = -1;
-        int result = instance.returnMax(a, b);
+        int result = OOP_T4.returnMax(a, b);
         assertEquals(-1, result);
         // TODO review the generated test code and remove the default call to fail.
     }
@@ -90,9 +90,9 @@ public class OOP_T4Test {
         System.out.println("returnMax");
         int a = 3;
         int b = 10;
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 10;
-        int result = instance.returnMax(a, b);
+        int result = OOP_T4.returnMax(a, b);
         assertEquals(10, result);
     }
     //test so nho nhat trong mang
@@ -100,45 +100,45 @@ public class OOP_T4Test {
     public void testReturnMinArr() {
         System.out.println("returnMinArr");
         int[] arr = {5,7,3,2,6,2,1};
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 1;
-        int result = instance.returnMinArr(arr);
+        int result = OOP_T4.returnMinArr(arr);
         assertEquals(expResult, result);
     }
     @Test
     public void testReturnMinArr2() {
         System.out.println("returnMinArr");
         int[] arr = {0,0,0,0,0,0};
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = 0;
-        int result = instance.returnMinArr(arr);
+        int result = OOP_T4.returnMinArr(arr);
         assertEquals(expResult, result);
     }
     @Test
     public void testReturnMinArr3() {
         System.out.println("returnMinArr");
         int[] arr = {5,0,-3,2,10,4};
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = -3;
-        int result = instance.returnMinArr(arr);
+        int result = OOP_T4.returnMinArr(arr);
         assertEquals(expResult, result);
     }
     @Test
     public void testReturnMinArr4() {
         System.out.println("returnMinArr");
         int[] arr = {-1,-4,-6,-2,0};
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = -6;
-        int result = instance.returnMinArr(arr);
+        int result = OOP_T4.returnMinArr(arr);
         assertEquals(expResult, result);
     }
     @Test
     public void testReturnMinArr5() {
         System.out.println("returnMinArr");
         int[] arr = {100,10000,0,-111};
-        OOP_T4 instance = new OOP_T4();
+        //OOP_T4 instance = new OOP_T4();
         int expResult = -111;
-        int result = instance.returnMinArr(arr);
+        int result = OOP_T4.returnMinArr(arr);
         assertEquals(expResult, result);
     }
     @Test
@@ -147,8 +147,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 77.8;
         double height = 1.84;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Binh thuong",result);
         
     }
@@ -157,8 +157,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 100;
         double height = 1.74;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Beo phi",result);
         
     }
@@ -167,8 +167,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 49;
         double height = 1.63;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Thieu can",result);
         
     }
@@ -177,8 +177,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 47.6;
         double height = 1.6;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Binh thuong",result);        
     }
     @Test
@@ -186,8 +186,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 66.5;
         double height = 1.7;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Thua can",result);    
     }
     @Test
@@ -195,8 +195,8 @@ public class OOP_T4Test {
         System.out.println("printBMI");
         double weight = 52;
         double height = 1.45;
-        OOP_T4 instance = new OOP_T4();
-        String result = instance.printBMI(weight, height);
+        //OOP_T4 instance = new OOP_T4();
+        String result = OOP_T4.printBMI(weight, height);
         assertEquals("Thua can",result);    
     }
 }
