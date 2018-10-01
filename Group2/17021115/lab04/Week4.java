@@ -25,7 +25,7 @@ public class Week4 {
 		if(BMI < 18.5) {
 			ketQua = "Thiếu cân";
 		}
-		if(BMI >= 18.5 && BMI <= 24.99) {
+		if(BMI >= 18.5 && BMI <= 22.99) {
 			ketQua = "Bình thường";
 		}
 		if(BMI >= 23 && BMI <= 25) {
