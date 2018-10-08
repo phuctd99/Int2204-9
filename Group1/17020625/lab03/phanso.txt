@@ -1,0 +1,125 @@
+import java.util.Scanner;
+
+public class PS {
+	private int tu;
+	private int mau;
+
+	public PS() {
+	}
+
+	public PS(int tu, int mau) {
+		this.tu = tu;
+		this.mau = mau;
+	}
+	
+	// hàm c?ng 2 phân s? (tr? v? phân s? t?ng)
+	public PS cong2PS(PS p) {
+		PS tong = new PS();
+		tong.tu = this.tu * p.getMau() + this.mau * p.getTu();
+		tong.mau = this.mau * p.getMau();
+		tong.rutgon();
+		return tong;
+	}
+	
+	// hàm tr? 2 phân s?
+	public PS tru2PS(PS p) {
+		PS tru = new PS();
+		tru.tu = this.tu * p.getMau() - p.getTu() * this.mau;
+		tru.mau = this.mau * p.getMau();
+		tru.rutgon();
+		return tru;
+	}
+
+	// hàm nhân 2 phân s?
+	public PS nhan2PS(PS p) {
+		PS nhan = new PS();
+		nhan.tu = this.tu * p.getTu();
+		nhan.mau = this.mau * p.getMau();
+		nhan.rutgon();
+		return nhan;
+	}
+
+	// hàm chia 2 phân s?
+	public PS chia2PS(PS p) {
+		PS chia = new PS();
+		chia.tu = this.tu * p.getMau();
+		chia.mau = this.mau * p.getTu();
+		chia.rutgon();
+		return chia;
+	}
+
+	public int getTu() {
+		return tu;
+	}
+
+	public void setTu(int tu) {
+		this.tu = tu;
+	}
+
+	public int getMau() {
+		return mau;
+	}
+
+	public void setMau(int mau) {
+		this.mau = mau;
+	}
+	
+	// hàm tính u?c chung l?n nh?t cho 2 s? nguyên
+	public int ucln(int a, int b) {
+		a = Math.abs(a);
+		b = Math.abs(b);
+		while (a != b) {
+			if (a > b) {
+				a -= b;
+			} else
+				b -= a;
+		}
+		return a;
+	}
+
+	// hàm rút g?n phân s?
+	public void rutgon() {
+		int uc = ucln(this.tu, this.mau);
+		this.tu /= uc;
+		this.mau /= uc;
+	}
+
+	// hàm nh?p phân s?
+	public void nhapPS() {
+		Scanner sc = new Scanner(System.in);
+		System.out.print("Nh?p t? s?: ");
+		this.tu = sc.nextInt();
+		System.out.print("Nh?p m?u s?: ");
+		this.mau = sc.nextInt();
+		do {
+			if (this.mau == 0) {
+				System.out.println("Phân s? không th?a mãn, nh?p l?i");
+				System.out.print("Nh?p t? s?: ");
+				this.tu = sc.nextInt();
+				System.out.print("Nh?p m?u s?: ");
+				this.mau = sc.nextInt();
+			}
+		} while (this.mau == 0);
+	}
+	
+	// hàm xu?t phân s?
+	public void xuatPS() {
+            if(mau<0){
+                this.mau *= -1;
+                this.tu *= -1;
+            }
+		if (tu == 0 || mau == 1) {
+			System.out.println(this.tu);
+		} else
+			System.out.println(this.tu + "/" + this.mau);
+	}
+	
+	// hàm so sánh 2 phân s?
+	public boolean equals(PS p) {
+		float soSanh = (float) this.tu / this.mau - (float) p.getTu() / p.getMau();
+		if (soSanh < 0) {
+			return false; // tr? v? false n?u ps1 < ps2
+		}
+		return true; // tr? v? true n?u ps1 > ps2
+	}
+}
