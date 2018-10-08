@@ -35,7 +35,7 @@ class shape{
 
 class circle extends shape{
     final double pi = 3.14;
-    protected double radius;
+    protected double radius = 1;
 
     public circle(){
         super();
@@ -73,7 +73,7 @@ class circle extends shape{
 }
 
 class rectangle extends shape{
-    protected double width, length;
+    protected double width = 1, length = 1;
 
     public rectangle(){
         super();
