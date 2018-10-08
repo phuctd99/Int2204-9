@@ -1,0 +1,129 @@
+package baitaptuan5;
+// class shape
+public class Shape {
+		
+	String color = "red";
+	boolean filled = true;
+	public Shape(String color, boolean filled) {
+		super();
+		this.color = color;
+		this.filled = filled;
+	}
+	public String getColor() {
+		return color;
+	}
+	public void setColor(String color) {
+		this.color = color;
+	}
+	public boolean isFilled() {
+		return filled;
+	}
+	public void setFilled(boolean filled) {
+		this.filled = filled;
+	}
+	//public String toString(){
+		
+	//}
+	//class circle ke thua class shape
+	public class Circle extends Shape{ // 
+		final double PI = 3.14;
+		double radius;
+		public Circle(String color, boolean filled, double radius) {
+			super(color, filled);
+			this.radius = radius;
+		}
+		public double getRadius() {
+			return radius;
+		}
+		public void setRadius(double radius) {
+			this.radius = radius;
+		}
+		// tinh dien tich hinh tron
+		public double getArea() {
+			return radius * radius * PI;
+			
+		}
+		// tinh chu vi hinh tron
+		public double getPerimeter() {
+			
+			return radius * 2 * PI;
+	
+		}  
+	}
+		
+		
+		
+		//class hinh chu nhat
+		public class Rectangle extends Shape {
+			double width = 1.0;
+			double length = 1.0;
+			public Rectangle(String color, boolean filled, double width, double length) {
+				super(color, filled);
+				this.width = width;
+				this.length = length;
+			}
+			public double getWidth() {
+				return width;
+			}
+			public void setWidth(double width) {
+				this.width = width;
+			}
+			public double getLength() {
+				return length;
+			}
+			public void setLength(double length) {
+				this.length = length;
+			}
+			// tinh dien tich hinh chu nhat
+			public double getArea() {
+				return width * length; 
+				
+			}
+			//tinh chu vi hinh chu nhat
+			public double getPerimeter() {
+				
+				return (width + length) * 2;
+		
+			}
+			
+		}
+		
+		
+		
+		
+		public class Square extends Rectangle{
+			
+			double side;
+			public Square(String color, boolean filled, double width, double length, double side) {
+				super(color, filled, width, length);
+				this.side = side;
+			}
+
+			public double getSide() {
+				return side;
+			}
+
+			public void setSide(double side) {
+				this.side = side;
+			}
+			
+		
+		}
+		
+		public static void main(String[] args) {
+			
+			Shape sh =  new Shape("do", true);
+			Square sq = sh.new Square("vang", true, 4, 4, 4);
+			System.out.println(sq.getArea());
+			
+			
+			
+			
+		}
+			
+	
+	
+
+
+	
+}
