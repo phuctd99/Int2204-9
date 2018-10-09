@@ -1,8 +1,8 @@
 package HinhHoc;
 
 public class Shape {
-	private String color = "red";
-	private boolean filled = true;
+	protected String color = "red";
+	protected boolean filled = true;
 	
 	
 	public Shape() {
