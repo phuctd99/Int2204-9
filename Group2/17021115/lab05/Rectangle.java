@@ -1,8 +1,8 @@
 package HinhHoc;
 
 public class Rectangle extends Shape{
-	private double width = 1.0;
-	private double length = 1.0;
+	protected double width = 1.0;
+	protected double length = 1.0;
 	
 	
 	
@@ -15,7 +15,8 @@ public class Rectangle extends Shape{
 		this.length = length;
 	}
 	public Rectangle(double width, double length, String color, boolean filled) {
-		super(color, filled);
+		super.color = color;
+                super.filled = filled;
 		this.width = width;
 		this.length = length;
 	}

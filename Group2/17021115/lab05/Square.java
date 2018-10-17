@@ -11,14 +11,20 @@ public class Square extends Rectangle {
 	public Square(double side, String color, boolean filled) {
 		super(side, side, color, filled);
 	}
-	public void setWidth(double side) {
-		super.setWidth(side);
+        public void setWidth(double side) {
+		this.width = side;
+                this.length = side;
 	}
 	public void setLength(double side) {
-		super.setLength(side);
+		this.width = side;
+                this.length = side;
+	}
+	public void setSide(double side) {
+		super.width = side;
+                super.length = side;
 	}
 	public double getSide() {
-		return super.getWidth();
+		return super.width;
 	}
 	public double getArea() {
 		return super.getArea();

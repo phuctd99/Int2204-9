@@ -1,6 +1,6 @@
 package HinhHoc;
 
-public class Test {
+public class TestHinhHoc {
 	public static void main(String[] args) {
 		/* biểu đồ có 3 quan hệ thừa kế
 		 	circle thừa kế từ hình
