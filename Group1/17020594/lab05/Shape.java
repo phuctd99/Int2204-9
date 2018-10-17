@@ -3,44 +3,50 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shape;
+package Diagram;
+
+import java.util.Scanner;
 
 /**
  *
- * @author Tommmm^^
+ * @author CCNE
  */
-public class Shape {
+public abstract class  Shape {
+    private double x;
+    private double y;
+    Scanner sc = new Scanner(System.in);
 
-    String color;
-    boolean filled;
+    public double getX() {
+        return x;
+    }
+
+    public void setX(double x) {
+        this.x = x;
+    }
+
+    public double getY() {
+        return y;
+    }
+
+    public void setY(double y) {
+        this.y = y;
+    }
+public void Input() {
+		
+		System.out.println("Nhap toa do x: ");
+		 x = sc.nextInt();
+		System.out.println("Nhap toa do y: ");
+		 y = sc.nextInt(); 
+	}
+	public void Output() {
+		
+		System.out.println("Toa do x: " + x);
+		System.out.println("Toa do y: " + y);
+	}
+	public void move( int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
    
-    public Shape (String color , boolean filled){
-        this.color = color;
-        this.filled = filled;
-    }
-    public Shape(){
-        color = "red";
-        filled = true;
-    }
-    
-    public String toString(){
-        return "Shape";
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public boolean isFilled() {
-        return filled;
-    }
-
-    public void setFilled(boolean filled) {
-        this.filled = filled;
-    }
-    
 }
+

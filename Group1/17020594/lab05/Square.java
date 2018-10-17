@@ -3,40 +3,34 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package shape;
+package Diagram;
 
 /**
  *
- * @author Tommmm^^
+ * @author CCNE
  */
-public class Square extends   Rectange {
-    double side;
-    public Square(){
-        side = 1.0;
-    }
-    public Square(double side){
-        this.side =side;
-    }
-    public Square(double side, String color, boolean filled){
-        super();
-        this.side =side;
-        
+public class Square extends Shape {
+    private double length;
+
+    public double getLength() {
+        return length;
     }
 
-    public double getSide() {
-        return side;
-    }
-
-    public void setSide(double side) {
-        this.side = side;
-    }
-    @Override
-     public void setWidth(double side) {
-        this.side = side;
+    public void setLength(double length) {
+        this.length = length;
     }
     
-    @Override
-    public void setLength(double side) {
-        this.side = side;
-    }
+    public void Input(){
+		
+		super.Input();
+		System.out.println("Nhap do dai canh: ");
+		length = super.sc.nextDouble();
+
+	}
+	
+	public void Output() {
+		
+		super.Output();
+		System.out.println("Do dai canh la : " + length);
+	}
 }
