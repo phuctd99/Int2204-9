@@ -355,7 +355,7 @@ class Hexagon extends Shape{
         a4 = r;
     }
     public int getA5() {
-        return a1;
+        return a5;
     }
     public void setA5(int r) {
         a5 = r;
