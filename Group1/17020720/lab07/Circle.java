@@ -75,4 +75,3 @@ public class Circle extends Shape {
         doDrawing(g);
     }
 }
-
