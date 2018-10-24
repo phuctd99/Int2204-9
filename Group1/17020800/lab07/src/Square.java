@@ -24,19 +24,31 @@ public class Square extends Shape {
         this.edge = edge;
         this.color = color;
     }
-
-//    public Boolean isSquare() {
-//        double c1 = Math.pow((x1 - x2), 2) + Math.pow((y1 - y2), 2);
-//        double c2 = Math.pow((x1 - x3), 2) + Math.pow((y1 - y3), 2);
-//        double c3 = Math.pow((x3 - x2), 2) + Math.pow((y3 - y2), 2);
-//        if (c1 > c2 && c1 > c3 && c1 == c2 + c3
-//                || c2 > c1 && c2 > c3 && c2 == c1 + c3
-//                || c3 > c2 && c3 > c1 && c3 == c2 + c1) {
-//            return true;
-//        }
-//        return false;
-//    }
-
+        //Mới thêm
+    public boolean isHit(int x,int y) {
+             
+            return getBounds().contains(x, y);
+        }
+ 
+        public void addX(int x) {
+             
+            this.x += x;
+        }
+ 
+        public void addY(int y) {
+             
+            this.y += y;
+        }
+ 
+        public void addWidth(int w) {
+             
+            this.edge += w;
+        }
+ 
+        public void addHeight(int h) {
+             
+            this.edge += h;
+        }
     @Override
     public void NhapThongTIn() {
         Scanner sc = new Scanner(System.in);
