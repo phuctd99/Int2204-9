@@ -158,13 +158,13 @@ public class Layer extends JFrame{
                     s4.addHeight(amount);
                     repaint();
                 }
-//                if (s5.isHit(x, y)) {                     
-//                    int amount =  (int)e.getWheelRotation() * 5;
-//                    s5.addWidth(amount);
-//                    s5.addHeight(amount);
-//                    repaint();
-//                }
-// 
+                if (s5.isHit(x, y)) {                     
+                    int amount =  (int)e.getWheelRotation() * 5;
+                    s5.addWidth(amount);
+                    s5.addHeight(amount);
+                    repaint();
+                }
+ 
                 
             }            
         }

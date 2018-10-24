@@ -10,8 +10,6 @@ public class Hexagon extends Shape {
     private int c;
     @Override
     public void paint(Graphics g) { 
-//        
-//        int c = (int)Math.sqrt(Math.pow((x1- x0), 2) + Math.pow((x1- y0), 2));
         int c1 = (int)Math.sqrt(3 * this.c * this.c); 
         
         int x1 = x0 - c1 / 2;
@@ -37,9 +35,7 @@ public class Hexagon extends Shape {
         int npoints = 6;
     g.setColor(color);
     g.fillPolygon(xpoints, ypoints, npoints);
-    this.setBounds(x1,y1, 500, 500);
-//        g.fillRect(0, 0, edge, edge);
-//        this.setBounds(x, y, edge, edge);
+    this.setBounds(0,0, 1000, 1000);
     }
     
     public Hexagon() {
@@ -59,23 +55,23 @@ public class Hexagon extends Shape {
  
         public void addX(int x) {
              
-            this.x += x;
+            this.x0 += x;
         }
  
         public void addY(int y) {
              
-            this.y += y;
+            this.y0 += y;
         }
  
-//        public void addWidth(int w) {
-//             
-//            this.rad += w;
-//        }
-// 
-//        public void addHeight(int h) {
-//             
-//            this.rad += h;
-//        }
+        public void addWidth(int w) {
+             
+            this.c += w;
+        }
+ 
+        public void addHeight(int h) {
+             
+            this.c += h;
+        }
     //end
     @Override
     public void NhapThongTIn() {
