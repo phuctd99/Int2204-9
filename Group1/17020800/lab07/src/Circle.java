@@ -46,7 +46,32 @@ public class Circle extends Shape{
         System.out.println("Nhập bán kính của hình");
         this.rad = sc.nextInt();
     }
-
+    //Mới thêm
+    public boolean isHit(int x,int y) {
+             
+            return getBounds().contains(x, y);
+        }
+ 
+        public void addX(int x) {
+             
+            this.x += x;
+        }
+ 
+        public void addY(int y) {
+             
+            this.y += y;
+        }
+ 
+        public void addWidth(int w) {
+             
+            this.rad += w;
+        }
+ 
+        public void addHeight(int h) {
+             
+            this.rad += h;
+        }
+    //end
     @Override
     public int getArea() {
         return (int)PI * rad * rad;

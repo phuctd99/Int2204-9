@@ -24,6 +24,32 @@ public class Rectangle extends Shape {
         this.cr = CR;
         this.color = color;
     }
+        //Mới thêm
+    public boolean isHit(int x,int y) {
+             
+            return getBounds().contains(x, y);
+        }
+ 
+        public void addX(int x) {
+             
+            this.x += x;
+        }
+ 
+        public void addY(int y) {
+             
+            this.y += y;
+        }
+ 
+        public void addWidth(int w) {
+             
+            this.cd += w;
+        }
+ 
+        public void addHeight(int h) {
+             
+            this.cr += h;
+        }
+    //end
     @Override
     public void NhapThongTIn() {
         Scanner sc = new Scanner(System.in);

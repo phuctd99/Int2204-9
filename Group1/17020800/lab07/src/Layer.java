@@ -1,12 +1,22 @@
 
-import java.awt.Color;
-import static java.awt.Color.*;
-import java.awt.Component;
 import java.awt.EventQueue;
 import java.util.ArrayList;
 import java.util.Scanner;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
+import java.awt.RenderingHints;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseWheelEvent;
+import java.awt.event.MouseWheelListener;
+import java.awt.geom.Ellipse2D;
+import java.awt.geom.Rectangle2D;
+
 
 public class Layer extends JFrame{
     
@@ -16,12 +26,18 @@ public class Layer extends JFrame{
     }
      
     private void initUI() {
-         
-        setTitle("Rotation");
+        //Mới thêm
+        MovingAdapter ma = new MovingAdapter();
+ 
+        addMouseMotionListener(ma);
+        addMouseListener(ma);
+        addMouseWheelListener(new ScaleHandler());
+        //end
+        setTitle("Shape");
         setLayout(null);
         JPanel p = new JPanel();
-        setSize(500, 500);
-        p.setSize(500, 500);
+        setSize(1000, 1000);
+        p.setSize(1000, 1000);
         getContentPane().add(p);
 //        Square sq = new Square();
 //        sq.NhapThongTIn();
@@ -36,6 +52,7 @@ public class Layer extends JFrame{
         
 //        add(new Rectangle(10, 10, 10, 50, 50, 50, BLUE));
 //        add(new Circle(50 , 50 , 100, PINK));
+
         Input();
         for(int i = 0; i < layer.size(); i++){
             p.add(layer.get(i));
@@ -43,13 +60,124 @@ public class Layer extends JFrame{
         setLocationRelativeTo(null);        
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
+    // mới thêm
+    class MovingAdapter extends MouseAdapter {
+ 
+        private int x;
+        private int y;
+ 
+        @Override
+        public void mousePressed(MouseEvent e) {
+             
+            x = e.getX();
+            y = e.getY();
+        }
+ 
+        @Override
+        public void mouseDragged(MouseEvent e) {
+ 
+            doMove(e);
+        }   
+         
+        private void doMove(MouseEvent e) {
+             
+            int dx = e.getX() - x;
+            int dy = e.getY() - y;
+            if (s1.isHit(x, y)) {
+                 
+                s1.addX(dx);
+                s1.addY(dy);
+                repaint();
+            }
+            if (s2.isHit(x, y)) {
+                 
+                s2.addX(dx);
+                s2.addY(dy);
+                repaint();
+            }
+            if (s3.isHit(x, y)) {
+                 
+                s3.addX(dx);
+                s3.addY(dy);
+                repaint();
+            }
+ 
+            if (s4.isHit(x, y)) {
+                 
+                s4.addX(dx);
+                s4.addY(dy);
+                repaint();
+            }
+            if (s5.isHit(x, y)) {
+                 
+                s5.addX(dx);
+                s5.addY(dy);
+                repaint();
+            }
+ 
+            x += dx;
+            y += dy;            
+        }
+    }
+    class ScaleHandler implements MouseWheelListener {
+         
+        @Override
+        public void mouseWheelMoved(MouseWheelEvent e) {
+ 
+            doScale(e);
+        }
+         
+        private void doScale(MouseWheelEvent e) {
+             
+            int x = e.getX();
+            int y = e.getY();
+ 
+            if (e.getScrollType() == MouseWheelEvent.WHEEL_UNIT_SCROLL) {
+                if (s1.isHit(x, y)) {                     
+                    int amount =  (int)e.getWheelRotation() * 5;
+                    s1.addWidth(amount);
+                    s1.addHeight(amount);
+                    repaint();
+                }
+                if (s2.isHit(x, y)) {                     
+                    int amount =  (int)e.getWheelRotation() * 5;
+                    s2.addWidth(amount);
+                    s2.addHeight(amount);
+                    repaint();
+                }
+//                if (s3.isHit(x, y)) {                     
+//                    int amount =  (int)e.getWheelRotation() * 5;
+//                    s3.addWidth(amount);
+//                    s3.addHeight(amount);
+//                    repaint();
+//                }
+                
+                if (s4.isHit(x, y)) {                     
+                    int amount =  (int)e.getWheelRotation() * 5;
+                    s4.addWidth(amount);
+                    s4.addHeight(amount);
+                    repaint();
+                }
+                if (s5.isHit(x, y)) {                     
+                    int amount =  (int)e.getWheelRotation() * 5;
+                    s5.addWidth(amount);
+                    s5.addHeight(amount);
+                    repaint();
+                }
+ 
+                
+            }            
+        }
+    }
     
-    
-    
-    
+    //end
     
     private ArrayList<Shape> layer = new ArrayList<>();
-
+    private Shape s1 = new Rectangle();
+    private Shape s2 = new Square();
+    private Shape s3 = new Triangle();
+    private Shape s4 = new Circle();
+    private Shape s5 = new Hexagon();
     public ArrayList<Shape> Input() {
         System.out.println("Nhập số phần tử của Layer");
         Scanner sc = new Scanner(System.in);
@@ -66,29 +194,29 @@ public class Layer extends JFrame{
             int a = sc.nextInt();
             switch (a) {
                 case 1:
-                    s = new Rectangle();
-                    s.NhapThongTIn();
-                    layer.add(s);
+                    
+                    s1.NhapThongTIn();
+                    layer.add(s1);
                     break;
                 case 2:
-                    s = new Square();
-                    s.NhapThongTIn();
-                    layer.add(s);
+                    
+                    s2.NhapThongTIn();
+                    layer.add(s2);
                     break;
                 case 3:
-                    s = new Triangle();
-                    s.NhapThongTIn();
-                    layer.add(s);
+                    
+                    s3.NhapThongTIn();
+                    layer.add(s3);
                     break;
                 case 4:
-                    s = new Circle();
-                    s.NhapThongTIn();
-                    layer.add(s);
+                    
+                    s4.NhapThongTIn();
+                    layer.add(s4);
                     break;
                 case 5:
-                    s = new Hexagon();
-                    s.NhapThongTIn();
-                    layer.add(s);
+                    
+                    s5.NhapThongTIn();
+                    layer.add(s5);
                     break;
                 default:
                     break;

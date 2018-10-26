@@ -1,13 +1,7 @@
 
 import java.awt.Color;
-import java.awt.Color;
 import java.awt.Component;
-import java.awt.EventQueue;
-import java.awt.Graphics;
-import java.awt.Graphics2D;
 import java.util.Scanner;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
 
 public abstract class Shape extends Component{
 
@@ -54,5 +48,25 @@ public abstract class Shape extends Component{
     @Override
     public String toString() {
         return " color " + color + ", x = " + x + ", y = " + y ;
+    }
+
+    boolean isHit(int x,int y) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void addWidth(int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void addHeight(int amount) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void addX(int dx) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+    void addY(int dy) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
