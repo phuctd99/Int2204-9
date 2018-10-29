@@ -76,15 +76,15 @@ public class Baituan8_2 {
         }
     }
     public static void main(String[] args)  {
-//        Division();
-//        print();
-//        Pointer();
-//        classcast();
-//        try {
-//            FileNot();
-//        } catch (FileNotFoundException ex) {
-//            Logger.getLogger(Baituan8_2.class.getName()).log(Level.SEVERE, null, ex);
-//        }
+        Division();
+        print();
+        Pointer();
+        classcast();
+        try {
+            FileNot();
+        } catch (FileNotFoundException ex) {
+            Logger.getLogger(Baituan8_2.class.getName()).log(Level.SEVERE, null, ex);
+        }
         String file = "E:\\xyz.txt";
         try {
             IOE(file);
