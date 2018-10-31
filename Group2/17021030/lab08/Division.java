@@ -1,7 +1,7 @@
 package lab08;
 
 public class Division extends BinaryExpression {
-     private Expression left;
+    private Expression left;
     private Expression right;
 
     public Division(Expression left, Expression right) {
