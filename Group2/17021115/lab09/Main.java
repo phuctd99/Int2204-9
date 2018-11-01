@@ -6,7 +6,7 @@ import java.io.IOException;
 public abstract class Test {
 
 	public static void main(String[] args) {
-		String[] list = { "hello world!", "what your name?", "how are you?" };
+		String[] list = { "hello world!", "what's your name?", "how are you?" };
 		File file = new File("C:\\Users\\TUNG318\\Desktop\\Data.txt");
 
 		// phần b
