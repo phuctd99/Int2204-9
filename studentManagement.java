@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.*;//new
 public class studentManagement {
     public student [] sv=new student[100];
     private int size=0;
